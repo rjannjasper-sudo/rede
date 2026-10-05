@@ -1,0 +1,54 @@
+/* ── Layout ─────────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background-color: #1e293b;   /* slate-800 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ── Brand ──────────────────────────────────────────────── */
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #f8fafc;
+  user-select: none;
+}
+
+/* ── Nav list ───────────────────────────────────────────── */
+.navList {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Links ──────────────────────────────────────────────── */
+.navLink {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #cbd5e1;           /* slate-300 */
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navLink:hover {
+  background-color: #334155;  /* slate-700 */
+  color: #f8fafc;
+}
+
+/* Active / current page */
+.navLink.active {
+  background-color: #3b82f6;  /* blue-500 */
+  color: #ffffff;
+}
