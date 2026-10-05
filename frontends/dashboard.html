@@ -6,12 +6,20 @@
     <title>Dashboard — JDE</title>
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/pages/dashboard.css" />
+    <link rel="stylesheet" href="./src/responsive.css" />
   </head>
   <body>
     <!-- ── Navbar ──────────────────────────────────────── -->
     <nav class="dash-nav">
       <span class="dash-nav__brand">JDE</span>
-      <ul class="dash-nav__links" role="list">
+      <button
+        class="dash-nav__toggle"
+        id="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >☰</button>
+      <ul class="dash-nav__links" id="nav-links" role="list">
         <li><a href="/index.html">Home</a></li>
         <li><a href="/dashboard.html" class="active">Dashboard</a></li>
         <li><a href="/records.html">Records</a></li>

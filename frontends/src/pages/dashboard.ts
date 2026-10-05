@@ -1,3 +1,22 @@
+// ── Mobile nav toggle ─────────────────────────────────────
+const navToggle = document.getElementById('nav-toggle') as HTMLButtonElement | null;
+const navLinks  = document.getElementById('nav-links')  as HTMLUListElement  | null;
+
+navToggle?.addEventListener('click', () => {
+  const isOpen = navLinks?.classList.toggle('is-open') ?? false;
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.textContent = isOpen ? '✕' : '☰';
+});
+
+// Close menu when a link is clicked (single-page nav feel)
+navLinks?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('is-open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    if (navToggle) navToggle.textContent = '☰';
+  });
+});
+
 // ── Dashboard TypeScript ──────────────────────────────────
 // Populates summary stat cards and activity feed.
 // Replace the mock data below with real API calls.
