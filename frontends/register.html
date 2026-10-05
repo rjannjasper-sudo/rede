@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register — JDE</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/pages/register.css" />
+  </head>
+  <body>
+    <div id="register-app">
+      <div class="reg-card">
+        <div class="reg-header">
+          <h1 class="reg-title">Create an account</h1>
+          <p class="reg-subtitle">Join JDE to get started</p>
+        </div>
+
+        <form id="register-form" class="reg-form" novalidate>
+          <!-- Name row -->
+          <div class="reg-row">
+            <div class="reg-field">
+              <label for="firstName" class="reg-label">First Name</label>
+              <input
+                id="firstName"
+                name="firstName"
+                type="text"
+                autocomplete="given-name"
+                placeholder="Juan"
+                class="reg-input"
+              />
+              <span class="reg-error" id="firstName-error" role="alert"></span>
+            </div>
+            <div class="reg-field">
+              <label for="lastName" class="reg-label">Last Name</label>
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                autocomplete="family-name"
+                placeholder="Dela Cruz"
+                class="reg-input"
+              />
+              <span class="reg-error" id="lastName-error" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="reg-field">
+            <label for="email" class="reg-label">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              class="reg-input"
+            />
+            <span class="reg-error" id="email-error" role="alert"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="reg-field">
+            <label for="password" class="reg-label">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Min. 8 characters"
+              class="reg-input"
+            />
+            <span class="reg-error" id="password-error" role="alert"></span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="reg-field">
+            <label for="confirmPassword" class="reg-label">Confirm Password</label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Repeat your password"
+              class="reg-input"
+            />
+            <span class="reg-error" id="confirmPassword-error" role="alert"></span>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" id="register-btn" class="reg-btn">
+            <span id="btn-text">Create account</span>
+            <span id="btn-spinner" class="reg-spinner" aria-hidden="true" hidden></span>
+          </button>
+        </form>
+
+        <p class="reg-footer">
+          Already have an account?
+          <a href="/login.html" class="reg-link">Sign in</a>
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="./src/pages/register.ts"></script>
+  </body>
+</html>

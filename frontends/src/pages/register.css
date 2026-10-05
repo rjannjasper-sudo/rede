@@ -1,0 +1,176 @@
+/* ── Page wrapper ───────────────────────────────────────── */
+#register-app {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--bg);
+}
+
+/* ── Card ───────────────────────────────────────────────── */
+.reg-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.reg-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reg-title {
+  font-size: 1.8rem !important;
+  letter-spacing: -0.5px !important;
+  margin: 0 0 0.25rem !important;
+  color: var(--text-h);
+}
+
+.reg-subtitle {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* ── Form ───────────────────────────────────────────────── */
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Two-column row for first/last name */
+.reg-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .reg-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Field ──────────────────────────────────────────────── */
+.reg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.reg-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+/* ── Input ──────────────────────────────────────────────── */
+.reg-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  color: var(--text-h);
+  background: var(--code-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reg-input::placeholder {
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.reg-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+  background: var(--bg);
+}
+
+.reg-input.is-error {
+  border-color: #ef4444;
+}
+
+.reg-input.is-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* ── Error text ─────────────────────────────────────────── */
+.reg-error {
+  font-size: 0.8rem;
+  color: #ef4444;
+  min-height: 1em;
+}
+
+/* ── Submit button ──────────────────────────────────────── */
+.reg-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.72rem 1rem;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reg-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: var(--shadow);
+}
+
+.reg-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ────────────────────────────────────────────── */
+.reg-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: reg-spin 0.6s linear infinite;
+}
+
+@keyframes reg-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Footer link ────────────────────────────────────────── */
+.reg-footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text);
+  margin-top: 1.5rem;
+}
+
+.reg-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.reg-link:hover {
+  text-decoration: underline;
+}
