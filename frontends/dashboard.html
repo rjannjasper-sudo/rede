@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — JDE</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/pages/dashboard.css" />
+  </head>
+  <body>
+    <!-- ── Navbar ──────────────────────────────────────── -->
+    <nav class="dash-nav">
+      <span class="dash-nav__brand">JDE</span>
+      <ul class="dash-nav__links" role="list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="/records.html">Records</a></li>
+      </ul>
+      <div class="dash-nav__user">
+        <span class="dash-nav__avatar" aria-hidden="true">JD</span>
+      </div>
+    </nav>
+
+    <!-- ── Main ───────────────────────────────────────── -->
+    <main class="dash-main">
+
+      <!-- Page heading -->
+      <header class="dash-page-header">
+        <div>
+          <h1 class="dash-page-title">Dashboard</h1>
+          <p class="dash-page-sub">Welcome back! Here's what's happening.</p>
+        </div>
+        <button class="dash-btn-primary">+ New Record</button>
+      </header>
+
+      <!-- ── Summary cards ──────────────────────────── -->
+      <section class="dash-section" aria-label="Summary">
+        <div class="dash-cards">
+
+          <div class="dash-card dash-card--blue">
+            <div class="dash-card__icon" aria-hidden="true">📋</div>
+            <div class="dash-card__body">
+              <p class="dash-card__label">Total Records</p>
+              <p class="dash-card__value" id="stat-total">—</p>
+              <p class="dash-card__trend positive">↑ 12% this month</p>
+            </div>
+          </div>
+
+          <div class="dash-card dash-card--green">
+            <div class="dash-card__icon" aria-hidden="true">✅</div>
+            <div class="dash-card__body">
+              <p class="dash-card__label">Completed</p>
+              <p class="dash-card__value" id="stat-completed">—</p>
+              <p class="dash-card__trend positive">↑ 8% this month</p>
+            </div>
+          </div>
+
+          <div class="dash-card dash-card--yellow">
+            <div class="dash-card__icon" aria-hidden="true">🕐</div>
+            <div class="dash-card__body">
+              <p class="dash-card__label">Pending</p>
+              <p class="dash-card__value" id="stat-pending">—</p>
+              <p class="dash-card__trend negative">↓ 3% this month</p>
+            </div>
+          </div>
+
+          <div class="dash-card dash-card--purple">
+            <div class="dash-card__icon" aria-hidden="true">👤</div>
+            <div class="dash-card__body">
+              <p class="dash-card__label">Active Users</p>
+              <p class="dash-card__value" id="stat-users">—</p>
+              <p class="dash-card__trend positive">↑ 5% this month</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── Content grid ────────────────────────────── -->
+      <section class="dash-section dash-grid" aria-label="Overview">
+
+        <!-- Recent Activity -->
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <h2 class="dash-panel__title">Recent Activity</h2>
+            <a href="/records.html" class="dash-panel__action">View all →</a>
+          </div>
+          <ul class="dash-activity" id="activity-list" role="list">
+            <li class="dash-activity__item skeleton"></li>
+            <li class="dash-activity__item skeleton"></li>
+            <li class="dash-activity__item skeleton"></li>
+            <li class="dash-activity__item skeleton"></li>
+            <li class="dash-activity__item skeleton"></li>
+          </ul>
+        </div>
+
+        <!-- Quick Stats / Chart placeholder -->
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <h2 class="dash-panel__title">Monthly Overview</h2>
+            <span class="dash-badge">Last 30 days</span>
+          </div>
+          <div class="dash-chart-placeholder" aria-label="Chart placeholder">
+            <div class="dash-chart-bars">
+              <div class="dash-bar" style="--h: 55%"></div>
+              <div class="dash-bar" style="--h: 78%"></div>
+              <div class="dash-bar" style="--h: 45%"></div>
+              <div class="dash-bar" style="--h: 90%"></div>
+              <div class="dash-bar" style="--h: 62%"></div>
+              <div class="dash-bar" style="--h: 38%"></div>
+              <div class="dash-bar" style="--h: 85%"></div>
+            </div>
+            <p class="dash-chart-label">Connect your data source to populate this chart</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ── Quick actions ───────────────────────────── -->
+      <section class="dash-section" aria-label="Quick Actions">
+        <h2 class="dash-section-title">Quick Actions</h2>
+        <div class="dash-actions">
+          <button class="dash-action-card">
+            <span class="dash-action-card__icon">📄</span>
+            <span class="dash-action-card__label">New Record</span>
+          </button>
+          <button class="dash-action-card">
+            <span class="dash-action-card__icon">📊</span>
+            <span class="dash-action-card__label">Generate Report</span>
+          </button>
+          <button class="dash-action-card">
+            <span class="dash-action-card__icon">🔍</span>
+            <span class="dash-action-card__label">Search Records</span>
+          </button>
+          <button class="dash-action-card">
+            <span class="dash-action-card__icon">⚙️</span>
+            <span class="dash-action-card__label">Settings</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <script type="module" src="./src/pages/dashboard.ts"></script>
+  </body>
+</html>
