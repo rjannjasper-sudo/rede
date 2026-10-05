@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Record — JDE</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/pages/add-record.css" />
+    <link rel="stylesheet" href="./src/responsive.css" />
+  </head>
+  <body>
+
+    <!-- ── Navbar ──────────────────────────────────────── -->
+    <nav class="dash-nav">
+      <span class="dash-nav__brand">JDE</span>
+      <button
+        class="dash-nav__toggle"
+        id="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >☰</button>
+      <ul class="dash-nav__links" id="nav-links" role="list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/dashboard.html">Dashboard</a></li>
+        <li><a href="/records.html" class="active">Records</a></li>
+      </ul>
+      <div class="dash-nav__user">
+        <span class="dash-nav__avatar" aria-hidden="true">JD</span>
+      </div>
+    </nav>
+
+    <!-- ── Page ───────────────────────────────────────── -->
+    <main class="ar-main">
+
+      <!-- Breadcrumb -->
+      <nav class="ar-breadcrumb" aria-label="Breadcrumb">
+        <a href="/dashboard.html">Dashboard</a>
+        <span aria-hidden="true">›</span>
+        <a href="/records.html">Records</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Add Record</span>
+      </nav>
+
+      <!-- Page heading -->
+      <header class="ar-page-header">
+        <div>
+          <h1 class="ar-page-title">Add New Record</h1>
+          <p class="ar-page-sub">Fill in the details below to create a new record.</p>
+        </div>
+      </header>
+
+      <!-- ── Form card ─────────────────────────────────── -->
+      <div class="ar-card">
+        <form id="add-record-form" class="ar-form" novalidate>
+
+          <!-- Section: Basic Info -->
+          <fieldset class="ar-fieldset">
+            <legend class="ar-legend">Basic Information</legend>
+
+            <!-- Title -->
+            <div class="ar-field ar-field--full">
+              <label for="title" class="ar-label">
+                Record Title <span class="ar-required" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="title"
+                name="title"
+                type="text"
+                class="ar-input"
+                placeholder="Enter a descriptive title"
+                maxlength="120"
+                autocomplete="off"
+                aria-describedby="title-error"
+              />
+              <span class="ar-error" id="title-error" role="alert"></span>
+            </div>
+
+            <!-- Category + Status row -->
+            <div class="ar-row">
+              <div class="ar-field">
+                <label for="category" class="ar-label">
+                  Category <span class="ar-required" aria-hidden="true">*</span>
+                </label>
+                <select id="category" name="category" class="ar-select" aria-describedby="category-error">
+                  <option value="">— Select category —</option>
+                  <option value="financial">Financial</option>
+                  <option value="legal">Legal</option>
+                  <option value="hr">Human Resources</option>
+                  <option value="operations">Operations</option>
+                  <option value="it">IT</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="ar-error" id="category-error" role="alert"></span>
+              </div>
+
+              <div class="ar-field">
+                <label for="status" class="ar-label">Status</label>
+                <select id="status" name="status" class="ar-select">
+                  <option value="pending">Pending</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="completed">Completed</option>
+                  <option value="archived">Archived</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Date + Priority row -->
+            <div class="ar-row">
+              <div class="ar-field">
+                <label for="date" class="ar-label">
+                  Date <span class="ar-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="date"
+                  name="date"
+                  type="date"
+                  class="ar-input"
+                  aria-describedby="date-error"
+                />
+                <span class="ar-error" id="date-error" role="alert"></span>
+              </div>
+
+              <div class="ar-field">
+                <label class="ar-label">Priority</label>
+                <div class="ar-radio-group" role="radiogroup" aria-label="Priority">
+                  <label class="ar-radio">
+                    <input type="radio" name="priority" value="low" /> Low
+                  </label>
+                  <label class="ar-radio">
+                    <input type="radio" name="priority" value="medium" checked /> Medium
+                  </label>
+                  <label class="ar-radio">
+                    <input type="radio" name="priority" value="high" /> High
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Section: Details -->
+          <fieldset class="ar-fieldset">
+            <legend class="ar-legend">Details</legend>
+
+            <!-- Description -->
+            <div class="ar-field ar-field--full">
+              <label for="description" class="ar-label">Description</label>
+              <textarea
+                id="description"
+                name="description"
+                class="ar-textarea"
+                rows="4"
+                placeholder="Provide additional context or notes…"
+                maxlength="1000"
+              ></textarea>
+              <span class="ar-char-count" id="desc-count">0 / 1000</span>
+            </div>
+
+            <!-- Reference No + Assigned To row -->
+            <div class="ar-row">
+              <div class="ar-field">
+                <label for="refNumber" class="ar-label">Reference No.</label>
+                <input
+                  id="refNumber"
+                  name="refNumber"
+                  type="text"
+                  class="ar-input"
+                  placeholder="e.g. REF-2026-001"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="ar-field">
+                <label for="assignedTo" class="ar-label">Assigned To</label>
+                <input
+                  id="assignedTo"
+                  name="assignedTo"
+                  type="text"
+                  class="ar-input"
+                  placeholder="Name or email"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+
+            <!-- File attachment -->
+            <div class="ar-field ar-field--full">
+              <label for="attachment" class="ar-label">Attachment</label>
+              <div class="ar-file-drop" id="file-drop-zone">
+                <input
+                  id="attachment"
+                  name="attachment"
+                  type="file"
+                  class="ar-file-input"
+                  accept=".pdf,.doc,.docx,.png,.jpg,.xlsx"
+                  aria-describedby="attachment-hint"
+                />
+                <span class="ar-file-icon" aria-hidden="true">📎</span>
+                <span class="ar-file-label">
+                  <strong>Click to upload</strong> or drag and drop
+                </span>
+                <span id="attachment-hint" class="ar-file-hint">
+                  PDF, DOC, DOCX, PNG, JPG, XLSX — max 10 MB
+                </span>
+                <span class="ar-file-name" id="file-name" hidden></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ── Actions ──────────────────────────────── -->
+          <div class="ar-actions">
+            <a href="/records.html" class="ar-btn ar-btn--ghost">Cancel</a>
+            <button type="button" class="ar-btn ar-btn--secondary" id="save-draft-btn">
+              Save as Draft
+            </button>
+            <button type="submit" class="ar-btn ar-btn--primary" id="submit-btn">
+              <span id="submit-text">Submit Record</span>
+              <span id="submit-spinner" class="ar-spinner" aria-hidden="true" hidden></span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <script type="module" src="./src/pages/add-record.ts"></script>
+  </body>
+</html>
+
